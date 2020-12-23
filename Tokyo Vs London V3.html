@@ -15350,6 +15350,15 @@ Name: id, dtype: float64</pre>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">available_listings</span> <span class="p">(</span><span class="n">df</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Description: This function is used to select all the listings that are currently listed as available(not booked).</span>
+
+<span class="sd">    Arguments:</span>
+<span class="sd">        Data Frame that you will be querying</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        Data Frame Has Only Available Listings and its variables and other fields.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">df1</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;booked == 0&#39;</span><span class="p">)</span>
     <span class="k">return</span> <span class="p">(</span><span class="n">df1</span><span class="p">)</span>
 </pre></div>
@@ -15774,6 +15783,16 @@ memory usage: 7.2+ GB
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">review_scores</span> <span class="p">(</span><span class="n">df</span><span class="p">):</span>
+    
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Description: This function is used to acquire all review scores columns from an airbnb dataset.</span>
+
+<span class="sd">    Arguments:</span>
+<span class="sd">        The airbnb dataset stored in a dataframe when we read the CSV</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        A Dataframe with only review scores columns</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">df1</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s1">&#39;review_scores_rating&#39;</span><span class="p">,</span><span class="s1">&#39;review_scores_accuracy&#39;</span><span class="p">,</span><span class="s1">&#39;review_scores_cleanliness&#39;</span><span class="p">,</span><span class="s1">&#39;review_scores_checkin&#39;</span><span class="p">,</span>
              <span class="s1">&#39;review_scores_communication&#39;</span><span class="p">,</span> <span class="s1">&#39;review_scores_location&#39;</span><span class="p">,</span><span class="s1">&#39;review_scores_value&#39;</span><span class="p">]]</span>
     <span class="k">return</span> <span class="p">(</span><span class="n">df1</span><span class="p">)</span>
@@ -17161,6 +17180,15 @@ Name: room_type, Length: 1151752, dtype: object</pre>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">DataModelling</span> <span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">tsize</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Description: This function performs basic linear regression using the dependent and independent variables stored into two dataframes and also the test size.</span>
+
+<span class="sd">    Arguments:</span>
+<span class="sd">        Pass the indep, dep, test size into the parameters</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        Returns a test score that indicates how reliable the predicted values are.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="c1">#Split</span>
     <span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">test_size</span><span class="o">=</span><span class="n">tsize</span><span class="p">)</span>
     
@@ -17345,6 +17373,14 @@ Name: room_type, Length: 1151752, dtype: object</pre>
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>There is one step missing and that is the null values in reviews. Not all listings received review scores so those rows need to be dropped in order to perform the analysis.</p>
+
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
